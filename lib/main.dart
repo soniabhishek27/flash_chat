@@ -1,6 +1,9 @@
+import 'package:flashchat/screens/chat_screen.dart';
+import 'package:flashchat/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/welcome_screen.dart';
 import 'screens/login_screen.dart';
+import 'screens/chat_screen.dart';
 
 
 
@@ -11,13 +14,16 @@ class FlashChat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
 
-      theme: ThemeData.dark().copyWith(
-        textTheme: TextTheme(
-          body1: TextStyle(color: Colors.black54)
-        )
-      ),
-      home: LoginScreen(),
+     initialRoute: WelcomeScreen.id,
+      routes: {
+        WelcomeScreen.id : (context) => WelcomeScreen(),
+        LoginScreen.id : (context) => LoginScreen(),
+        registrationScreen.id : (context) => registrationScreen(),
+        ChatScreen.id : (context) => ChatScreen(),
+
+      },
 
     );
   }
